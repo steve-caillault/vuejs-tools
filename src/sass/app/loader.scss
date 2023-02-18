@@ -1,0 +1,43 @@
+div.loader {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    overflow: hidden;
+    z-index: 20;
+    background-color: $color-white;
+}
+
+div.loader::before,
+div.loader::after {
+    position: absolute;
+    content: '';
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+
+    border-radius: 28px;
+    border-width: 2px;
+    border-style: solid;
+    
+    width: 28px;
+    height: 28px;
+
+    box-sizing: border-box;
+    opacity: 1;
+    transition: opacity 0.25s ease-out;
+}
+
+div.loader::before {
+    border-color: $background-color-loader;
+}
+
+div.loader::after {
+    border-color: $background-color-spinner-loader transparent transparent;
+    box-shadow: 0px 0px 0px 1px transparent;
+    animation: anim-spin 800ms linear infinite;
+}
