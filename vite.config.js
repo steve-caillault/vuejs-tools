@@ -1,9 +1,34 @@
-import path from 'path'
+import path from 'path';
 /***/
-import { defineConfig } from 'vite'
+import { defineConfig } from 'vite';
+/***/
 import vue from '@vitejs/plugin-vue'
+import ViteSvgSpriteWrapper from 'vite-svg-sprite-wrapper';
 
 // @see https://vitejs.dev/config/
+
+/**
+ * Retourne le plugin de génération du sprite SVG
+ * @return PluginOption
+ */
+const getSvgSpritePlugin = (() => {
+  return ViteSvgSpriteWrapper({
+    icons: 'src/images/icons/sources/*.svg',
+    outputDir: 'public/images',
+    sprite: {
+      mode: {
+        symbol: {
+          sprite: '../icons.svg'
+        }
+      },
+      shape: {
+        id: {
+          generator: 'icon-'
+        }
+      }
+    }
+  });
+});
 
 const options = defineConfig({
 
@@ -13,7 +38,10 @@ const options = defineConfig({
     outDir: 'public'
   },
 
-  plugins: [vue()],
+  plugins: [
+    vue(),
+    getSvgSpritePlugin()
+  ],
   resolve: {
     alias: {
       '@js': path.resolve(__dirname, 'src/js'),
