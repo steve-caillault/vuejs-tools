@@ -18,7 +18,7 @@ const getSvgSpritePlugin = (() => {
     sprite: {
       mode: {
         symbol: {
-          sprite: '../icons.svg'
+          sprite: '../../../src/images/icons.svg'
         }
       },
       shape: {
@@ -32,8 +32,6 @@ const getSvgSpritePlugin = (() => {
 
 const options = defineConfig({
 
-  root: './',
-
   build: {
     outDir: 'public'
   },
@@ -45,8 +43,11 @@ const options = defineConfig({
   resolve: {
     alias: {
       '@js': path.resolve(__dirname, 'src/js'),
+      '@tools': path.resolve(__dirname, 'src/js/tools'),
       '@components': path.resolve(__dirname, 'src/js/components'),
       /***/
+      '@images': path.resolve(__dirname, 'src/images'),
+      '@public': path.resolve(__dirname, 'public'),
       '@sass': path.resolve(__dirname, 'src/sass')
     }
   }
