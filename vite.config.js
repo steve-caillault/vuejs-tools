@@ -47,6 +47,7 @@ const options = defineConfig({
       '@components': path.resolve(__dirname, 'src/js/components'),
       '@compositions': path.resolve(__dirname, 'src/js/compositions'),
       '@stores': path.resolve(__dirname, 'src/js/stores'),
+      '@data': path.resolve(__dirname, 'src/js/data'),
       /***/
       '@images': path.resolve(__dirname, 'src/images'),
       '@public': path.resolve(__dirname, 'public'),

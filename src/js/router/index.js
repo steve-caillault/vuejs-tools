@@ -10,6 +10,19 @@ const routes = [
         name: 'home',
         component: (() => import(/* webpackChunkName: "routes" */ '@components/Pages/Home.vue'))
     },
+
+    // Tests des composants
+    { 
+        path: '/components/loader', 
+        name: 'components.loader', 
+        component: (() => import(/* webpackChunkName: "routes" */ '@components/Pages/Components/Loader.vue')) 
+    },
+
+    { 
+        path: '/components/icon', 
+        name: 'components.icon', 
+        component: (() => import(/* webpackChunkName: "routes" */ '@components/Pages/Components/Icon.vue')) 
+    },
     
     // Pages d'erreur
     {
