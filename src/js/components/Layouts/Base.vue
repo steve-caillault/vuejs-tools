@@ -2,7 +2,6 @@
 import { defineAsyncComponent } from 'vue';
 
 // Composants
-const MainMenu = defineAsyncComponent(() => import(/* webpackChunkName: "components-ui-menus" */ '@components/UI/Menus/Main.vue'));
 
 // Props
 const props = defineProps({
@@ -28,7 +27,6 @@ const getClasses = (() => {
 
 <template>
     <div :class="getClasses()">
-        <main-menu></main-menu>
         <header>
             <h1>{{ pageTitle }}</h1>
         </header>
